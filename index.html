@@ -23,11 +23,11 @@
             </button>
         </form>
         <div class="auth">
-            <a href="" class="login">
+            <a href="#login" class="login">
                 Войти
             </a>
         </div>
-        <a href="" class="shopping-cart">
+        <a href="#cart" class="shopping-cart">
             <img src="./img/shopping-cart.svg" alt="Иконка корзины">
             <span class="shopping-counter">
                 12
@@ -286,7 +286,7 @@
                 <img src="./img/logo.png" alt="Логотип: Индекс еда" class="footer-logo">
                 <nav class="footer-nav">
                     <a href="#" class="footer-link">Доставка и оплата</a>
-                    <a href="#" class="footer-link">Напишите нам</a>
+                    <a href="#feedback" class="footer-link">Напишите нам</a>
                 </nav>
                 <div class="social-links">
                     <a href="#" class="social-link">
@@ -323,18 +323,53 @@
     <div class="fancyboxs">
         <div class="overlay">
             <div class="fancybox-container">
-                <div class="fancybox-login">
-                    <form class="form-login" action="">
-                        <img class="fancybox-login-img" src="./img/login.png" alt="Иконка: вход в аккаунт">
-                        <input class="fancybox-input" type="email" name="login" placeholder="Логин">
+                <div class="fancybox-block fancybox-login">
+                    <form class="fancybox-form form-login" action="">
+                        <img class="fancybox-img fancybox-login-img" src="./img/login.png" alt="Иконка: вход в аккаунт">
+                        <input class="fancybox-input" type="email" name="login" placeholder="Логин (e-mail)">
                         <input class="fancybox-input" type="password" name="password" placeholder="Пароль">
                         <button class="fancybox-button button-primery button-hover" type="submit">Войти</button>
                     </form>
-                    <a href="#" class="registration">Регистрация</a>
-                    <a href="#" class="fancybox-close"></a>
+                    <a href="#registration" class="fancybox-link">Регистрация</a>
+                    <a href="#recover-account" class="fancybox-link">Забыл пароль</a>
+                    <a href="#fancybox-close" class="fancybox-close"></a>
+                </div>
+                <div class="fancybox-block fancybox-registration">
+                    <form class="fancybox-form form-registration" action="">
+                        <img class="fancybox-img fancybox-registration-img" src="./img/registration.png" alt="Иконка: регистрация аккаунта">
+                        <input class="fancybox-input" type="text" name="name" placeholder="Ваше имя">
+                        <input class="fancybox-input" type="tel" placeholder="Телефон">
+                        <input class="fancybox-input" type="email" name="registration-login" placeholder="E-mail">
+                        <input class="fancybox-input" type="password" name="registration-password" placeholder="Пароль">
+                        <input class="fancybox-input" type="password" placeholder="Повторите пароль">
+                        <button class="fancybox-button button-primery button-hover" type="submit">Зарегестрироваться</button>
+                    </form>
+                    <a href="#login" class="fancybox-link">Уже есть аккаунт</a>
+                    <a href="#fancybox-close" class="fancybox-close"></a>
+                </div>
+                <div class="fancybox-block fancybox-recover-account">
+                    <form class="fancybox-form form-recover-account" action="">
+                        <img class="fancybox-img fancybox-recover-account-img" src="./img/recover-account.png" alt="Иконка: регистрация аккаунта">
+                        <input class="fancybox-input" type="email" name="registration-login" placeholder="E-mail">
+                        <button class="fancybox-button button-primery button-hover" type="submit">Востановить пароль</button>
+                    </form>
+                    <a href="#fancybox-close" class="fancybox-close"></a>
+                </div>
+                <div class="fancybox-block fancybox-feedback">
+                    <form class="fancybox-form form-feedback" action="">
+                        <img class="fancybox-img fancybox-feedback-img" src="./img/feedback.png" alt="Иконка: регистрация аккаунта">
+                        <div class="feedback-input">
+                            <input class="fancybox-input" type="text" name="name" placeholder="Ваше имя">
+                            <input class="fancybox-input" type="email" name="registration-login" placeholder="E-mail">
+                        </div>
+                        <textarea class="fancybox-input-feedback" type="text" name="feedback" placeholder="Напишите нам свой вопрос"></textarea>
+                        <button class="fancybox-button button-primery button-hover" type="submit">Отправить</button>
+                    </form>
+                    <a href="#fancybox-close" class="fancybox-close"></a>
                 </div>
             </div>
         </div>
     </div>
+    <script src="./js/js.js"></script>
 </body>
 </html>
