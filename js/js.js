@@ -6,7 +6,10 @@ const overlay = document.querySelector('.overlay'),
     fancyboxLogin = document.querySelector('.fancybox-login'),
     fancyboxRegistration = document.querySelector('.fancybox-registration'),
     fancyboxRecoverAccount = document.querySelector('.fancybox-recover-account'),
-    fancyboxFeedback = document.querySelector('.fancybox-feedback');
+    fancyboxFeedback = document.querySelector('.fancybox-feedback'),
+    fancyboxCart = document.querySelector('.fancybox-cart'),
+    fancyboxFeedbackCard = document.querySelector('.fancybox-feedback-card'),
+    buttonFeedbackCard = document.querySelectorAll('.tabs-card button');
 
 buttonFancybox.forEach(item => {
     const href = item.getAttribute('href');
@@ -35,6 +38,7 @@ buttonFancybox.forEach(item => {
         item.addEventListener('click', event => {
             event.preventDefault();
             overlay.classList.add('active');
+            fancyboxCart.classList.add('active');
         });
     } else if (href === '#feedback') {
         item.addEventListener('click', event => {
@@ -43,6 +47,18 @@ buttonFancybox.forEach(item => {
             fancyboxFeedback.classList.add('active');
         });
     }
+});
+function buttonFeedbackCardNone () {
+    overlay.classList.remove('active');
+    fancyboxFeedbackCard.classList.remove('active');
+}
+buttonFeedbackCard.forEach(item => {
+    item.addEventListener('click', event => {
+        event.preventDefault();
+        overlay.classList.add('active');
+        fancyboxFeedbackCard.classList.add('active');
+        setTimeout(buttonFeedbackCardNone, 2000);
+    });
 });
 oveerlay.addEventListener('click', event => {
     event.preventDefault();
@@ -55,4 +71,54 @@ oveerlay.addEventListener('click', event => {
         });
     }
 });
+
+/* --- Категории блюд --- */
+const tabsLink = document.querySelectorAll('.tabs-link'),
+    tabsContant = document.querySelectorAll('.tabs-contant'),
+    buttonCategory = document.querySelector('.button-category');
+
+
+//Показать больше блюд
+buttonCategory.addEventListener('click', event => {
+    event.preventDefault();
+    let attribute = document.querySelector('.tabs-link--active').getAttribute('href').replace(/^#/,'');
+    
+    let activeCategore = document.querySelectorAll('.tabs-contant-' + attribute + '.hidden');
+
+    if (activeCategore) {
+        activeCategore[0].classList.remove('hidden');
+    }
+    if (activeCategore.length <= 1) {
+        buttonCategory.style.display = 'none';
+    }
+});
+
+//переключение категорий
+function activeTabsContent (active) {
+    tabsContant.forEach(item => {
+        item.classList.add('hidden');
+    });
+    const activeTabs = document.querySelector('.tabs-contant-' + active);
+    activeTabs.classList.remove('hidden');
+}
+//Активная категория блюд
+function CleanTabsAxtive () {
+    tabsLink.forEach(item => {
+        item.classList.remove('tabs-link--active');
+    });
+    buttonCategory.style.display = 'block';
+}
+tabsLink.forEach(item => {
+    item.addEventListener('click', event => {
+        event.preventDefault();
+        let target = event.target;
+        if(!target.classList.contains('tabs-link--active')){
+            CleanTabsAxtive();
+            target.classList.add('tabs-link--active');
+            let attribute = target.getAttribute('href').replace(/^#/,'');
+            activeTabsContent(attribute);
+        }
+    });
+});
+
 

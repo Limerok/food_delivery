@@ -804,9 +804,48 @@ body{
 .fancybox-feedback {
     display: none;
 }
+.fancybox-cart {
+    display: none;
+}
 .overlay {
     display: none;
 }
 .active {
     display: block;
 }
+/*----product-card-----*/
+.modal-cart{
+    margin: 10px;
+}
+.table-products {
+    font-weight: 100;
+}
+.table-products-img {
+    width: 120px;
+    padding: 5px;
+}
+.table-product-title {
+    padding: 7px;
+    font-weight: 100;
+}
+.table-product-quantity {
+    font-weight: 100;
+    padding: 7px;
+    display: flex;
+}
+.product-quantity {
+    max-width: 50px;
+}
+.table-product-price {
+    font-weight: 100;
+    padding: 7px;
+}
+.product-quantity-control {
+    display: flex;
+    flex-direction: column;
+}
+/*----Categories----*/
+.hidden {
+    display: none;
+}
+
