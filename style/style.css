@@ -581,6 +581,10 @@ body{
     .slide {
         padding: 35px;
     }
+    .feedback-input {
+        display: flex;
+        flex-direction: column;
+    }
 }
 @media (max-width: 576px) {
     .container {
@@ -805,6 +809,9 @@ body{
     display: none;
 }
 .fancybox-cart {
+    display: none;
+}
+.fancybox-feedback-card{
     display: none;
 }
 .overlay {

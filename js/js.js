@@ -60,6 +60,7 @@ buttonFeedbackCard.forEach(item => {
         setTimeout(buttonFeedbackCardNone, 2000);
     });
 });
+//закрытие на крест или мимо
 oveerlay.addEventListener('click', event => {
     event.preventDefault();
     let target = event.target;
