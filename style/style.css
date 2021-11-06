@@ -94,7 +94,7 @@ body{
     position: absolute;
     right: 46px;
     bottom: 40px;
-    z-index: 4;
+    z-index: 2;
     width: 97px;
     justify-content: space-between;
 }
@@ -558,190 +558,6 @@ body{
 .tab-advantage:hover>.hover-white {
     color: #fff;
 } 
-/*----Adaptability----*/
-@media (max-width: 1260px) {
-    .container {
-        max-width: 960px;
-    }
-    .searh-form {
-        margin-left: 40px;
-        margin-right: 40px;
-    }
-    .tabs-contant{
-        flex-wrap: wrap;
-    }
-    .tabs-card {
-        max-width: calc(50% - 30px);
-    }
-    .tabs-advantages {
-        flex-wrap: wrap;
-    }
-    .tab-advantage {
-        max-width: calc(50% - 30px);
-    }
-    .card {
-        background-position-x: right;
-    }
-    .delivery-cards {
-        justify-content: space-between;
-    }
-    .delivery-card {
-        width: 300px;
-    }
-    .slide {
-        padding: 96px;
-    }
-}
-@media (max-width: 992px) {
-    .container {
-        max-width: 750px;
-    }
-    .slide {
-        padding: 70px;
-    }
-    .slide-img {
-        height: 100%;
-    }
-    .delivery-card {
-        width: calc(50% - 30px);
-        height: auto;
-    }
-    .footer-logo {
-        margin-right: 40px;
-    }
-    .slide-summer {
-        background-position-x: center;
-    }
-}
-@media (max-width: 768px) {
-    .container {
-        max-width: 560px;
-    }
-    .header {
-        flex-wrap: wrap;
-    }
-    .searh-form {
-        order: 4;
-        margin: 15px 0px;
-        width: 100%;
-    }
-    .promo {
-        flex-wrap: wrap;
-    }
-    .slide {
-        padding: 35px;
-    }
-    .slide-img {
-        width: auto;
-    }
-    .feedback-input {
-        display: flex;
-        flex-direction: column;
-    }
-}
-@media (max-width: 576px) {
-    .container {
-        max-width: 90%;
-    }
-    .tabs-card {
-        max-width: 100%;
-    }
-    .tab-advantage {
-        max-width: 100%;
-    }
-    .delivery-card {
-        width: 100%;
-    }
-    .tabs-link {
-        margin: 0;
-    }
-    .tabs {
-        justify-content: space-between;
-    }
-    .delivery-week-title {
-        line-height: 30px;
-    }
-    .advantages {
-        padding-bottom: 100px;
-    }
-    .footer-wrapper {
-        flex-direction: column;
-    }
-    .footer-nav {
-        order: -1;
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-    }
-    .footer-logo {
-        margin: 0;
-        width: auto;
-        margin: 10px 0;
-    }
-    .social-links {
-        margin: 0;
-    }
-    .social-link {
-        margin: 0 10px;
-        padding: 5px;
-    }
-    .footer-link {
-        margin: 0;
-        padding: 5px 10px;
-    }
-    .control-buttons {
-        bottom: 10px;
-    }
-
-}
-@media (max-width: 426px) {
-    .logo-image {
-        flex: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .shopping-cart {
-        margin-right: auto;
-    }
-    .promo {
-        padding-bottom: 50px;
-    }
-    .delivery-week {
-        padding-bottom: 50px;
-    }
-    .delivery-week-title {
-        margin-bottom: 20px;
-    }
-    .section-title {
-        margin-bottom: 20px;
-    }
-    .tabs {
-        flex-direction: column;
-        justify-content: center;
-    }
-    .footer-link {
-        padding: 5px 5px;
-    }
-    .button-category {
-        padding: 15px 0;
-        width: 90%;
-    }
-    .tabs-info {
-        padding-top: 15px;
-    }
-    .button-primery {
-        padding: 12px 30px;
-    }
-    .slide {
-        padding: 25px;
-    }
-    .card {
-        padding: 25px;
-    }
-}
-@media (max-width: 321px) {
-        
-}
 
 /*fancybox*/
 .overlay {
@@ -870,45 +686,320 @@ body{
 .fancybox-feedback-card{
     display: none;
 }
+.fancybox-delivery{
+    display: none;
+}
 .overlay {
     display: none;
 }
 .active {
     display: block;
 }
+.delivery-title {
+    font-weight: bold;
+}
+.delivery-text {
+    text-align: left;
+}
 /*----product-card-----*/
+.fancybox-cart {
+    max-height: 90%;
+    padding: 0px 0px 10px 5px;
+    width: 40%;
+}
+
 .modal-cart{
     margin: 10px;
+    max-height: 300px;
+    overflow-x: hidden;
 }
-.table-products {
-    font-weight: 100;
+.modal-cart::-webkit-scrollbar {
+    width: 5px;
 }
-.table-products-img {
-    width: 120px;
-    padding: 5px;
-}
-.table-product-title {
-    padding: 7px;
-    font-weight: 100;
-}
-.table-product-quantity {
-    font-weight: 100;
-    padding: 7px;
-    display: flex;
-}
-.product-quantity {
-    max-width: 50px;
-}
-.table-product-price {
-    font-weight: 100;
-    padding: 7px;
-}
-.product-quantity-control {
+.modal-cart::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: #f9f9fd;
+}  
+.modal-cart::-webkit-scrollbar-thumb {
+    background-color: #f2bf93;
+    background-image: -webkit-linear-gradient(45deg,rgba(255, 255, 255, .25) 25%,
+                      transparent 25%,
+                      transparent 50%,
+                      rgba(255, 255, 255, .25) 50%,
+                      rgba(255, 255, 255, .25) 75%,
+                      transparent 75%,
+                      transparent);
+}   
+.item-cart {
     display: flex;
     flex-direction: column;
+    width: fit-content;
+    min-width: 30px;
+    background-color:#B9B9BE;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.cart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: lavender;
+    border-radius: 20px;
+}
+.cart-inform {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: space-around;
+    min-height: 102px;
+}
+.cart-item-quantity {
+    padding: 2px;
+}
+.cart-price {
+    font-size: 14px;
+    font-weight: bold;
+}
+.cart-quantity {
+    font-size: 14px;
+}
+.cart-finish-price {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+.delite-product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    position: relative;
+    padding: 5px;
+    margin-right: 10px;
+}
+.delite-product::after{
+    position: absolute;
+    content: ' ';
+    height: 15px;
+    width: 2px;
+    background-color: #f37321;
+    transform: rotate(-45deg);
+}
+.delite-product::before {
+    position: absolute;
+    content: ' ';
+    height: 15px;
+    width: 2px;
+    background-color: #f37321;
+    transform: rotate(45deg);
+}
+.cart-button-control{
+    transition: 0.3s;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    height: 40px;
+    cursor: pointer;
+}
+.cart-button-control:hover {
+    background-color: #F47322;
 }
 /*----Categories----*/
 .hidden {
     display: none;
 }
 
+/*----Adaptability----*/
+@media (max-width: 1260px) {
+    .container {
+        max-width: 960px;
+    }
+    .searh-form {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .tabs-contant{
+        flex-wrap: wrap;
+    }
+    .tabs-card {
+        max-width: calc(50% - 30px);
+    }
+    .tabs-advantages {
+        flex-wrap: wrap;
+    }
+    .tab-advantage {
+        max-width: calc(50% - 30px);
+    }
+    .card {
+        background-position-x: right;
+    }
+    .delivery-cards {
+        justify-content: space-between;
+    }
+    .delivery-card {
+        width: 300px;
+    }
+    .slide {
+        padding: 96px;
+    }
+}
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+    .slide {
+        padding: 70px;
+    }
+    .slide-img {
+        height: 100%;
+    }
+    .delivery-card {
+        width: calc(50% - 30px);
+        height: auto;
+    }
+    .footer-logo {
+        margin-right: 40px;
+    }
+    .slide-summer {
+        background-position-x: center;
+    }
+    .fancybox-cart {
+        width: 60%;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        max-width: 560px;
+    }
+    .header {
+        flex-wrap: wrap;
+    }
+    .searh-form {
+        order: 4;
+        margin: 15px 0px;
+        width: 100%;
+    }
+    .promo {
+        flex-wrap: wrap;
+    }
+    .slide {
+        padding: 35px;
+    }
+    .slide-img {
+        width: auto;
+    }
+    .feedback-input {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 576px) {
+    .container {
+        max-width: 90%;
+    }
+    .tabs-card {
+        max-width: 100%;
+    }
+    .tab-advantage {
+        max-width: 100%;
+    }
+    .delivery-card {
+        width: 100%;
+    }
+    .tabs-link {
+        margin: 0;
+    }
+    .tabs {
+        justify-content: space-between;
+    }
+    .delivery-week-title {
+        line-height: 30px;
+    }
+    .advantages {
+        padding-bottom: 100px;
+    }
+    .footer-wrapper {
+        flex-direction: column;
+    }
+    .footer-nav {
+        order: -1;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .footer-logo {
+        margin: 0;
+        width: auto;
+        margin: 10px 0;
+    }
+    .social-links {
+        margin: 0;
+    }
+    .social-link {
+        margin: 0 10px;
+        padding: 5px;
+    }
+    .footer-link {
+        margin: 0;
+        padding: 5px 10px;
+    }
+    .control-buttons {
+        bottom: 10px;
+    }
+    .fancybox-cart {
+        width: 80%;
+    }
+
+}
+@media (max-width: 426px) {
+    .logo-image {
+        flex: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .shopping-cart {
+        margin-right: auto;
+    }
+    .promo {
+        padding-bottom: 50px;
+    }
+    .delivery-week {
+        padding-bottom: 50px;
+    }
+    .delivery-week-title {
+        margin-bottom: 20px;
+    }
+    .section-title {
+        margin-bottom: 20px;
+    }
+    .tabs {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer-link {
+        padding: 5px 5px;
+    }
+    .button-category {
+        padding: 15px 0;
+        width: 90%;
+    }
+    .tabs-info {
+        padding-top: 15px;
+    }
+    .button-primery {
+        padding: 12px 30px;
+    }
+    .slide {
+        padding: 25px;
+    }
+    .card {
+        padding: 25px;
+    }
+    .fancybox-cart {
+        width: 90%;
+    }
+}
+@media (max-width: 321px) {
+        
+}

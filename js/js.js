@@ -9,7 +9,8 @@ const overlay = document.querySelector('.overlay'),
     fancyboxFeedback = document.querySelector('.fancybox-feedback'),
     fancyboxCart = document.querySelector('.fancybox-cart'),
     fancyboxFeedbackCard = document.querySelector('.fancybox-feedback-card'),
-    buttonFeedbackCard = document.querySelectorAll('.tabs-card button');
+    buttonFeedbackCard = document.querySelectorAll('.tabs-card button'),
+    fancybocsDelivery = document.querySelector('.fancybox-delivery');
 
 buttonFancybox.forEach(item => {
     const href = item.getAttribute('href');
@@ -45,6 +46,12 @@ buttonFancybox.forEach(item => {
             event.preventDefault();
             overlay.classList.add('active');
             fancyboxFeedback.classList.add('active');
+        });
+    } else if (href === '#delivery') {
+        item.addEventListener ('click', event => {
+            event.preventDefault();
+            overlay.classList.add('active');
+            fancybocsDelivery.classList.add('active');
         });
     }
 });
