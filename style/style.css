@@ -85,22 +85,63 @@ body{
     color: #fff;
 }
 /* ----MAIN---- */
-.slide {
+.slider {
     position: relative;
-    border-radius: 20px;
     min-height: 400px;
+}
+.control-buttons {
     display: flex;
+    position: absolute;
+    right: 46px;
+    bottom: 40px;
+    z-index: 4;
+    width: 97px;
+    justify-content: space-between;
+}
+.button-control-img {
+    width: 13px;
+    height: 24px;
+}
+.button-item {
+    background-color: rgba(235, 235, 235, 0.7);
+    padding: 20px 20px;
+    display: flex;
+    border-radius: 50%;
+}
+.button-item-left {
+    background-image: url(../img/button-control.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.button-item-right {
+    background-image: url(../img/button-control.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform:scale(-1, 1);
+}
+.slide {
+    transition: 0.5s;
+    position: absolute;
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
     align-items: center;
     padding: 100px;
     overflow: hidden;
 }
+.slide-active {
+    opacity: 1;
+}
 .slide-text-light{
     background-color: grey;
     color:white;
+    z-index: 2;
 }
 .slide-content{
     max-width: 400px;
     position: relative;
+    z-index: 2;
 }
 .slide-title{
     margin-top: 0;
@@ -133,10 +174,12 @@ body{
     font-weight: 500;
     line-height: 23px;
 }
-.slide-summer {
-    background-image: url(../img/summer.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+.slide-img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    right: 0;
 }
 .slide::before {
     content: "";
@@ -147,6 +190,7 @@ body{
     bottom: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.43) 40.45%, rgba(0, 0, 0, 0) 100%);
 }
 
@@ -544,6 +588,9 @@ body{
     .delivery-card {
         width: 300px;
     }
+    .slide {
+        padding: 96px;
+    }
 }
 @media (max-width: 992px) {
     .container {
@@ -551,6 +598,9 @@ body{
     }
     .slide {
         padding: 70px;
+    }
+    .slide-img {
+        height: 100%;
     }
     .delivery-card {
         width: calc(50% - 30px);
@@ -580,6 +630,9 @@ body{
     }
     .slide {
         padding: 35px;
+    }
+    .slide-img {
+        width: auto;
     }
     .feedback-input {
         display: flex;
